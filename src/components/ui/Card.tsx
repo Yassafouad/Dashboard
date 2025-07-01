@@ -1,11 +1,11 @@
-import React from 'react';
+import React, { ComponentPropsWithoutRef } from 'react';
 import { cn } from '@/lib/utils';
 import { motion } from 'framer-motion';
 
-interface CardProps extends React.HTMLAttributes<HTMLDivElement> {
+type CardProps = ComponentPropsWithoutRef<typeof motion.div> & {
   children: React.ReactNode;
   className?: string;
-}
+};
 
 const Card = React.forwardRef<HTMLDivElement, CardProps>(
   ({ className, children, ...props }, ref) => {

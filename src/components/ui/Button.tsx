@@ -174,9 +174,11 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
               animate={{ opacity: 1, x: 0 }}
               className="flex-shrink-0"
             >
-              {React.cloneElement(icon as React.ReactElement, {
-                className: cn(iconSizeClasses[size]),
-              })}
+              {React.isValidElement(icon)
+                ? React.cloneElement(icon, {
+                    className: cn(icon.props.className, iconSizeClasses[size]),
+                  })
+                : icon}
             </motion.div>
           )}
           
@@ -196,9 +198,11 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
               animate={{ opacity: 1, x: 0 }}
               className="flex-shrink-0"
             >
-              {React.cloneElement(icon as React.ReactElement, {
-                className: cn(iconSizeClasses[size]),
-              })}
+              {React.isValidElement(icon)
+                ? React.cloneElement(icon, {
+                    className: cn(icon.props.className, iconSizeClasses[size]),
+                  })
+                : icon}
             </motion.div>
           )}
         </div>
