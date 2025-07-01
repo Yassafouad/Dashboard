@@ -8,22 +8,18 @@ import { Button } from '@/components/ui/Button';
 import {
   Search,
   Bell,
-  Sun,
-  Moon,
   User,
   Settings,
   LogOut,
-  ChevronDown,
   Mail,
   HelpCircle,
   Shield,
   X,
-  Menu,
-  Plus,
   Filter,
   Download,
   RefreshCw,
 } from 'lucide-react';
+import Image from 'next/image';
 
 export function Topbar() {
   const { isDarkMode, toggleDarkMode } = useUIStore();
@@ -253,10 +249,12 @@ export function Topbar() {
             className="relative rounded-full hover:bg-gray-100/50 dark:hover:bg-gray-800/50 transition-all duration-300 p-1 h-auto"
           >
             <div className="relative">
-              <img
+              <Image
                 src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=32&h=32&fit=crop&crop=face"
                 alt="User"
                 className="h-8 w-8 rounded-full ring-2 ring-gray-200 dark:ring-gray-700 object-cover shadow-sm"
+                width={32}
+                height={32}
                 key="user-avatar"
               />
               <div className="absolute -bottom-0.5 -right-0.5 h-2.5 w-2.5 bg-green-500 rounded-full border-2 border-white dark:border-gray-900 shadow-sm"></div>
@@ -276,10 +274,12 @@ export function Topbar() {
                 {/* User info */}
                 <div className="px-4 py-3 border-b border-gray-200/50 dark:border-gray-700/50">
                   <div className="flex items-center space-x-3">
-                    <img
+                    <Image
                       src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=32&h=32&fit=crop&crop=face"
                       alt="User"
                       className="h-10 w-10 rounded-full object-cover shadow-sm"
+                      width={32}
+                      height={32}
                       key="user-avatar-dropdown"
                     />
                     <div>

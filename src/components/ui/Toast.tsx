@@ -81,7 +81,7 @@ export function ToastProvider({ children }: { children: React.ReactNode }) {
     return () => {
       globalToastContext = null;
     };
-  }, [toasts]);
+  }, [toasts, addToast]);
 
   return (
     <ToastContext.Provider value={{ toasts, addToast, removeToast }}>

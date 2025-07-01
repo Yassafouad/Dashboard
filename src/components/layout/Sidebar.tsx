@@ -22,8 +22,7 @@ import {
   Box,
   CreditCard,
   TrendingUp,
-  Cog,
-  Square
+  Cog
 } from 'lucide-react';
 import { Button } from '@/components/ui/Button';
 
@@ -67,7 +66,7 @@ const navigation = [
 ];
 
 export function Sidebar() {
-  const { isSidebarOpen, toggleSidebar, setSidebarOpen, initializeSidebar } = useUIStore();
+  const { isSidebarOpen, toggleSidebar, setSidebarOpen } = useUIStore();
   const pathname = usePathname();
   const [mounted, setMounted] = useState(false);
 
