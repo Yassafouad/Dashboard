@@ -22,7 +22,6 @@ import {
 import Image from 'next/image';
 
 export function Topbar() {
-  const { isDarkMode, toggleDarkMode } = useUIStore();
   const [isUserMenuOpen, setIsUserMenuOpen] = useState(false);
   const [isNotificationsOpen, setIsNotificationsOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');

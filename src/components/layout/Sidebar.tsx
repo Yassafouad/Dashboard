@@ -15,13 +15,6 @@ import {
   Settings,
   Menu,
   X,
-  ChevronLeft,
-  ChevronRight,
-  Home,
-  UserCheck,
-  Box,
-  CreditCard,
-  TrendingUp,
   Cog
 } from 'lucide-react';
 import { Button } from '@/components/ui/Button';

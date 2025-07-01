@@ -23,7 +23,7 @@ interface SalesChartProps {
 }
 
 export function SalesChart({ type = 'line', title = 'Sales Overview', data = salesData }: SalesChartProps) {
-  const CustomTooltip = ({ active, payload, label }: any) => {
+  const CustomTooltip = ({ active, payload, label }: unknown) => {
     if (active && payload && payload.length) {
       return (
         <div className="rounded-lg border border-gray-200 bg-white p-3 shadow-lg dark:border-gray-700 dark:bg-gray-800">

@@ -1,6 +1,6 @@
 'use client';
 
-import React, { createContext, useContext, useState, useEffect } from 'react';
+import React, { createContext, useContext, useState, useEffect, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, CheckCircle, AlertCircle, Info, AlertTriangle } from 'lucide-react';
 
@@ -58,7 +58,7 @@ export const toast = {
 export function ToastProvider({ children }: { children: React.ReactNode }) {
   const [toasts, setToasts] = useState<Toast[]>([]);
 
-  const addToast = (toast: Omit<Toast, 'id'>) => {
+  const addToast = useCallback((toast: Omit<Toast, 'id'>) => {
     const id = Math.random().toString(36).substr(2, 9);
     const newToast = { ...toast, id };
     setToasts(prev => [...prev, newToast]);
@@ -69,7 +69,7 @@ export function ToastProvider({ children }: { children: React.ReactNode }) {
         removeToast(id);
       }, toast.duration || 4000);
     }
-  };
+  }, []);
 
   const removeToast = (id: string) => {
     setToasts(prev => prev.filter(toast => toast.id !== id));
