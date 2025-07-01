@@ -27,11 +27,11 @@ export default function ProductsPage() {
 
   const categories = Array.from(new Set(products.map(p => p.category)));
 
-  const handleDeleteProduct = (productId: string) => {
+  const handleDeleteProduct = () => {
     toast.success('Product deleted successfully');
   };
 
-  const handleEditProduct = (productId: string) => {
+  const handleEditProduct = () => {
     toast.success('Edit product functionality');
   };
 
@@ -157,7 +157,7 @@ export default function ProductsPage() {
                             <Button
                               variant="outline"
                               size="sm"
-                              onClick={() => handleEditProduct(product.id)}
+                              onClick={() => handleEditProduct()}
                               icon={<Edit className="h-4 w-4" />}
                               className="flex-1"
                             >
@@ -166,7 +166,7 @@ export default function ProductsPage() {
                             <Button
                               variant="outline"
                               size="sm"
-                              onClick={() => handleDeleteProduct(product.id)}
+                              onClick={() => handleDeleteProduct()}
                               icon={<Trash2 className="h-4 w-4" />}
                               className="text-red-600 hover:text-red-700"
                             />

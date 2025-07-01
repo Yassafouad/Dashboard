@@ -26,12 +26,12 @@ export default function UsersPage() {
     return matchesSearch && matchesRole && matchesStatus;
   });
 
-  const handleDeleteUser = (userId: string) => {
+  const handleDeleteUser = () => {
     // In a real app, this would make an API call
     toast.success('User deleted successfully');
   };
 
-  const handleEditUser = (userId: string) => {
+  const handleEditUser = () => {
     // In a real app, this would open an edit modal
     toast.success('Edit user functionality');
   };
@@ -157,13 +157,13 @@ export default function UsersPage() {
                           <Button
                             variant="ghost"
                             size="sm"
-                            onClick={() => handleEditUser(user.id)}
+                            onClick={() => handleEditUser()}
                             icon={<Edit className="h-4 w-4" />}
                           />
                           <Button
                             variant="ghost"
                             size="sm"
-                            onClick={() => handleDeleteUser(user.id)}
+                            onClick={() => handleDeleteUser()}
                             icon={<Trash2 className="h-4 w-4" />}
                             className="text-red-600 hover:text-red-700"
                           />

@@ -22,8 +22,15 @@ interface SalesChartProps {
   data?: typeof salesData;
 }
 
+// Define a type for the payload items based on salesData structure
+interface TooltipPayloadItem {
+  name: string;
+  value: number;
+  [key: string]: unknown;
+}
+
 export function SalesChart({ type = 'line', title = 'Sales Overview', data = salesData }: SalesChartProps) {
-  const CustomTooltip = ({ active, payload, label }: unknown) => {
+  const CustomTooltip = ({ active, payload, label }: { active?: boolean; payload?: TooltipPayloadItem[]; label?: string }) => {
     if (active && payload && payload.length) {
       return (
         <div className="rounded-lg border border-gray-200 bg-white p-3 shadow-lg dark:border-gray-700 dark:bg-gray-800">

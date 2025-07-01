@@ -2,19 +2,21 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
+import type { ComponentPropsWithoutRef } from 'react';
 import { cn } from '@/lib/utils';
 import { Loader2 } from 'lucide-react';
 
-export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+// Use motion.button's prop type directly
+export type ButtonProps = ComponentPropsWithoutRef<typeof motion.button> & {
   variant?: 'default' | 'destructive' | 'outline' | 'secondary' | 'ghost' | 'link' | 'gradient';
   size?: 'sm' | 'md' | 'lg' | 'xl';
   loading?: boolean;
-  icon?: React.ReactNode;
+  icon?: React.ReactElement<{ className?: string }>;
   iconPosition?: 'left' | 'right';
   fullWidth?: boolean;
   rounded?: 'sm' | 'md' | 'lg' | 'full';
   shadow?: 'none' | 'sm' | 'md' | 'lg' | 'xl';
-}
+};
 
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
   (
