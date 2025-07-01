@@ -7,8 +7,9 @@ import { Badge } from '@/components/ui/Badge';
 import { Button } from '@/components/ui/Button';
 import { products } from '@/lib/dummy-data';
 import { formatCurrency, getStatusColor } from '@/lib/utils';
-import { Search, Filter, Edit, Trash2, Plus, Package } from 'lucide-react';
+import { Search, Edit, Trash2, Plus, Package } from 'lucide-react';
 import { toast } from '@/components/ui/Toast';
+import Image from 'next/image';
 
 export default function ProductsPage() {
   const [searchTerm, setSearchTerm] = useState('');
@@ -117,9 +118,11 @@ export default function ProductsPage() {
                   >
                     <Card className="overflow-hidden">
                       <div className="relative">
-                        <img
+                        <Image
                           src={product.image}
                           alt={product.name}
+                          width={200}
+                          height={200}
                           className="h-48 w-full object-cover"
                         />
                         <Badge className={`absolute top-2 right-2 ${getStatusColor(product.status)}`}>

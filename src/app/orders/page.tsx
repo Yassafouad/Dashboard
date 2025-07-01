@@ -8,7 +8,7 @@ import { Badge } from '@/components/ui/Badge';
 import { Button } from '@/components/ui/Button';
 import { orders } from '@/lib/dummy-data';
 import { formatCurrency, formatDate, getStatusColor } from '@/lib/utils';
-import { Search, Filter, Eye, Package, Calendar } from 'lucide-react';
+import { Search } from 'lucide-react';
 import { toast } from '@/components/ui/Toast';
 
 export default function OrdersPage() {

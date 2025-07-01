@@ -2,7 +2,6 @@
 
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { useUIStore } from '@/lib/store';
 import { SidebarToggle } from './SidebarToggle';
 import { Button } from '@/components/ui/Button';
 import {

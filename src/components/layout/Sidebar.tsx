@@ -14,8 +14,7 @@ import {
   BarChart3,
   Settings,
   Menu,
-  X,
-  Cog
+  X
 } from 'lucide-react';
 import { Button } from '@/components/ui/Button';
 

@@ -8,7 +8,7 @@ import { z } from 'zod';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/Card';
 import { Button } from '@/components/ui/Button';
 import { useUIStore } from '@/lib/store';
-import { User, Settings as SettingsIcon, Bell, Shield, Palette } from 'lucide-react';
+import { User, Settings as SettingsIcon } from 'lucide-react';
 import { toast } from '@/components/ui/Toast';
 
 const profileSchema = z.object({

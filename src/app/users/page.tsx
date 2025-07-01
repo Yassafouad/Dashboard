@@ -8,8 +8,9 @@ import { Badge } from '@/components/ui/Badge';
 import { Button } from '@/components/ui/Button';
 import { users } from '@/lib/dummy-data';
 import { formatDate, getRoleColor, getStatusColor } from '@/lib/utils';
-import { Search, Filter, Edit, Trash2, Plus } from 'lucide-react';
+import { Search, Edit, Trash2, Plus } from 'lucide-react';
 import { toast } from '@/components/ui/Toast';
+import Image from 'next/image';
 
 export default function UsersPage() {
   const [searchTerm, setSearchTerm] = useState('');
@@ -121,10 +122,12 @@ export default function UsersPage() {
                     <TableRow key={user.id}>
                       <TableCell>
                         <div className="flex items-center space-x-3">
-                          <img
+                          <Image
                             src={user.avatar}
                             alt={user.name}
                             className="h-10 w-10 rounded-full object-cover"
+                            width={40}
+                            height={40}
                           />
                           <div>
                             <p className="font-medium text-gray-900 dark:text-white">

@@ -15,6 +15,7 @@ import {
   TrendingUp,
   Package,
 } from 'lucide-react';
+import Image from 'next/image';
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -57,7 +58,7 @@ export default function DashboardPage() {
           variants={itemVariants}
           className="text-gray-600 dark:text-gray-400"
         >
-          Welcome to your Yassa dashboard. Here's an overview of your business.
+          Welcome to your Yassa dashboard. Here&apos;s an overview of your business.
         </motion.p>
       </motion.div>
 
@@ -163,10 +164,12 @@ export default function DashboardPage() {
                     <TableRow key={product.id}>
                       <TableCell>
                         <div className="flex items-center space-x-3">
-                          <img
+                          <Image
                             src={product.image}
                             alt={product.name}
                             className="h-10 w-10 rounded-lg object-cover"
+                            width={40}
+                            height={40}
                           />
                           <div>
                             <p className="font-medium">{product.name}</p>
